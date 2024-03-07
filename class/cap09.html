@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const book = {
+            title: '吾輩は猫である' ,
+            author: '夏目漱石' ,
+            pages: 620
+        }
+
+        console.log(book);
+        console.log(typeof book);
+        console.log(book.title);
+        console.log(book['title']);
+
+        console.log('--------check list 9-1--------');
+
+        const bicycle = {
+            color: 'red',
+            inch: 25
+        }
+        
+        console.log(bicycle.color);
+        bicycle.inch = 16;
+        console.log(bicycle.inch);
+
+        console.log('--------list 9-8--------');
+
+        const person = {
+            name: 'アリス',
+            greet: function() {
+                console.log(`こんにちは、私は${this.name}です。`);
+            }
+        }
+
+        person.greet();
+        console.log('--------list 9-9--------');
+    </script>
+</body>
+</html>

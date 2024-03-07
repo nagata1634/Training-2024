@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cap04</title>
+</head>
+<body>
+    <script>
+        // データ型を調べる
+        console.log(typeof 10);
+        console.log(typeof '10');
+        const name = 'Alice'
+        console.log(typeof name);
+            // 真偽値
+        console.log(typeof true);
+            // no date
+        console.log(typeof undefined);
+        console.log(typeof null);
+        let z;
+        console.log(z)
+            // boolean型へ変換
+        console.log(Boolean(1));
+        console.log(Boolean(0));
+        console.log(Boolean('Hello'));
+        console.log(Boolean(''));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+        const a = 1;
+        const b = 2;
+        const c = '3';
+            // 算術計算される
+        console.log(a + b);
+            // 文字どうしで結合される
+        console.log(a + c);
+        console.log(typeof(a + c));
+            // 比較演算
+        console.log(a < b);
+        console.log(a>= 3);
+        console.log((a + b) > 3);
+            // 厳密に等しい比較演算
+        console.log(1 == '1');
+                // int型の1とstr型の1でfalse
+        console.log(1 === '1');
+
+        // p068 checktest
+        console.log('p068 checktest')
+        console.log((5 + 3) * 2);
+        const d = '100';
+        const e = 100;
+        console.log(d === e);
+
+        const text = '私の名前は' + name + 'です';
+        console.log(text);
+        const text1 = `私の名前は${name}です`
+        console.log(text1);
+            // trueは1なので5が出力される
+        console.log(true + 4);
+        let text2 = '私は\'JavaScript\'を学ぶ';
+
+    </script>
+</body>
+</html>

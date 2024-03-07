@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* for (i = 1; i <= 5; i++) {
+            console.log(`${i}回目の処理`);
+        } */
+
+        /* for (i = 1; i <= 10; i++) {
+            console.log('Hello');
+        }
+        for (i = 5; i <= 10; i++) {
+            console.log(i);
+        } */
+        let number = 2;
+        while (number < 100) {
+            console.log(`${number}番`);
+            number = number * 2;
+        }
+        let x = 1
+        while (x <= 5) {
+            console.log(x);
+            x++;
+        }
+        const fruits = ['リンゴ', 'ミカン', 'バナナ', 'ブドウ']
+
+        for (let i = 0; i < fruits.length; i++) {
+            console.log(fruits[i]);
+        }
+        console.log('list 7-5');
+        for (fruit of fruits) {
+            console.log(fruit);
+        }
+
+        for (element of fruits) {
+            element = element + '食べたい'
+            console.log(element);
+        }
+
+        for (i = 0; i < 10; i++) {
+            if (i <= 3) {
+                continue;
+            }
+            console.log(`${i}回目の処理`);
+        }
+    </Script>
+    <table border="1">
+        <tr>
+            <script>
+                /* for (i = 1; i <= 10; i++) {
+                    document.write(`<td>${i}</td>`);
+                } */
+            </script>
+        </tr>
+    </table>
+
+    <table border="1">
+        <script>
+            for (i = 1; i <= 9; i++) { 
+                document.write(`<tr>`);
+                for (j = 1; j <= 9; j++) {
+                    x = i * j
+                    document.write(`<td>${x}</td>`);
+                }
+                document.write('</tr>')
+            }
+        </script>
+    </table>
+</body>
+</html>

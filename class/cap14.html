@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            text-align: center;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            cursor: pointer;
+            translate : 0.9s;
+        }
+        .expandImage{
+            width: 500px;
+        }
+        .reduction{
+            width: 100px;
+        }
+        .listImage {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <head>
+<!--     <button type="button">ボタン</button><br>
+    <button type="button" class="change">change </button><br>
+
+    <input type="text"> 入力内容<br>
+
+    <input type="radio" name="radio" value="1" class="radio">1 <br>
+    <input type="radio" name="radio" value="2" class="radio">2 <br>
+
+    <input type="checkbox" name="checkbox[]" value="1" class="checkbox">1 <br>
+    <input type="checkbox" name="checkbox[]" value="2" class="checkbox">1 <br>
+
+    <input type="text" class="keyEvent"> <br>
+
+    <select class="select">
+        <option value=""></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select> <br> -->
+
+    <div style="width: 200px; height: 100px; background-color: darkblue;" class="mouse"></div>
+    <div class="box" id="target" value="1">box</div> <br>
+    </head>
+    <body>
+        <div class="object">
+            <img class="expandImage" src="./images/item1.jpg" alt="">
+        </div>
+
+        <div class="scroll"></div>
+    </body>
+    <script>
+/*         function alertMessage() {
+            alert('event to button clik');
+            const bgColor = document.querySelector('body');
+            bgColor.style.backgroundColor = '#fff';
+        }
+
+        function backgroundColor() {
+            const byteColor = Math.floor(Math.random() * 16581375);
+            const colorCode = '#' + byteColor.toString(16);
+            console.log(colorCode);
+
+            const bgColor = document.querySelector('body');
+            bgColor.style.backgroundColor = colorCode;
+        }
+
+        const inputa = document.querySelector('input');
+        inputa.addEventListener('input', (event) => {
+            const value = event.currentTarget.value;
+            console.log(`入力内容: ${value}`);
+        });
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', alertMessage);
+
+        const change = document.querySelector('.change');
+        change.addEventListener('click', backgroundColor);
+
+        // radio
+        const radios = document.querySelectorAll('.radio');
+        for (let radio of radios) {
+            radio.addEventListener('input', (event) => {
+                const value = event.currentTarget.value;
+                console.log(`${value}がチェックされました`);
+            });
+        }
+        // checkbox
+        const checkboxs = document.querySelectorAll('.checkbox');
+        for (let checkbox of checkboxs) {
+            checkbox.addEventListener('input', (event) => {
+                const value = event.currentTarget.value;
+                console.log(`${value}がチェックされました`);
+            });
+        }
+        // selecter 
+        const selects = document.querySelectorAll('.select');
+        for (let select of selects) {
+            select.addEventListener('input', (event) => {
+                const value = event.currentTarget.value;
+                console.log(`${value}が選択されました`);
+            });
+        }
+
+        // keydown / keyup event
+        const input = document.querySelector('.keyEvent');
+        input.addEventListener('keydown', (event) => {
+            console.log(event.key);
+        });
+
+        // mousemove / mousedown / mouseup event
+        const mouse = document.querySelector('.mouse');
+        mouse.addEventListener('mousemove', function (event) {
+            console.log(`Move : x = ${event.offsetX}, y = ${event.offsetY}`);
+        });
+        mouse.addEventListener('mousedown', function(event) {
+            console.log(`Down : x = ${event.offsetX}, y = ${event.offsetY}`);
+        });
+        mouse.addEventListener('mouseup', function(event) {
+            console.log(`Up : x = ${event.offsetX}, y = ${event.offsetY}`);
+        }); */
+        // chenge color box
+        const boxs = document.querySelectorAll('.box'); // class box の要素を全て取得
+        for (let box of boxs) {// boxs から要素を一つ一つ展開する
+            box.addEventListener('mouseover', function(event) { //box 要素をmouseoverしたときfuncitonを実行
+                console.log('mouseover on box');
+                box.style.backgroundColor = 'pink';
+            });
+        } 
+        
+        // expand image when mouseover on image
+        // 縮小イメージをobjectタグの中に作成する
+        for (let i = 1;i <= 9; i++) {
+            const element = document.createElement('img');
+            element.src = './images/item' + i + '.jpg';
+            element.classList.add('reduction');
+            // object 要素を取得。
+            const object = document.querySelector('.object');
+            object.append(element);
+        }
+
+        // それぞれのタグを取得する
+        const main = document.querySelector('.expandImage');
+        const imgs = document.querySelectorAll('.reduction'); // reduction 要素を全て取得する
+
+        for (let img of imgs) { // reduction 要素の中の一つを取得する
+            img.addEventListener('mouseover', (event) => {
+                console.log(img.src);
+                main.src = img.src;
+                console.log(img);
+            });
+        };
+
+        const scrollContent = document.querySelector('.scroll');
+        for (let i = 0; i < 1000; i++) {
+            scrollContent.textContent += `テキスト ${i}`;
+        }
+        window.addEventListener('scroll', function() {
+            console.log(`スクロール量は${window.scrollY}px です`);
+        });
+        </script>
+</body>
+</html>

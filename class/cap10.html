@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('--------list 10-1--------');
+
+        console.log(Math.floor(Math.random() * 6) + 1);
+        console.log('--------list 10-5--------');
+
+        console.log(new Date());
+
+        console.log('--------list 10-8--------');
+
+        const theDay = new Date(2020, 3,9,5,20,0);
+
+        console.log(theDay.getFullYear());
+        console.log(theDay.getMonth());
+        console.log(theDay.getDate());
+
+        console.log('--------list 10-9--------');
+
+        const today = new Date().toLocaleString('ja-JP', {
+            dateStyle: 'long'
+        });
+        console.log(today);
+
+        const formatter = Intl.DateTimeFormat('ja-JP' , {
+            dateStyle: 'long'
+        });
+        const today1 = formatter.format(new Date());
+        console.log(today1);
+        console.log('--------list 10-10--------');
+
+        const dayArray = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
+
+        console.log(dayArray[new Date().getDay()]);
+    </script>
+</body>
+</html>

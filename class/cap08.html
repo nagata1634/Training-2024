@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('--------list 8-1--------');
+        function hello() {
+            console.log('こんにちは')
+        }
+
+        hello();
+        hello();
+
+        console.log('--------list 8-2--------');
+
+        function hello(name) {
+            console.log(`こんにちは${name}さん。`);
+        }
+        
+        hello('Alice');
+        hello('Bob');
+
+        console.log('--------list 8-3--------');
+
+        function pi() {
+            return 3.14;
+        }
+
+        const a = pi();
+        console.log(a);
+        console.log('--------list 8-4--------');
+
+        function double(number) {
+            const result = number * 2;
+            return result;
+        }
+
+        const b = double(10);
+        console.log(b);
+
+        const c = double(8);
+        console.log(c);
+        console.log('------check list 8-2----');
+
+        function isodd(number) {
+            if (number%2) {
+                result = `${number}は偶数です`;
+            } else {
+                result = `${number}は奇数です`;
+            }
+            return result;
+        }
+
+        // eStr = prompt('数値を入力して下さい');
+        eStr = 5; // eStrを宣言
+        eInt = parseInt(eStr);
+        const f = isodd(eInt);
+        console.log(f);
+        document.write(f);
+
+        console.log('--------list 8-5--------');
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        // const x = sum(3, 5);
+        // console.log(x);
+
+        console.log(sum(10, 20));
+
+        console.log('--------list 8-6--------');
+
+        function hello2(name = 'ゲスト') {
+            console.log('こんにちは')
+        }
+
+        hello2();
+        hello2('Bob');
+        console.log('--------check list 8-3--------');
+
+        function hello3(name, Last = 'さん') {
+            return `${name}${Last}`;
+        }
+
+        console.log(hello3('Bob','様'));
+        console.log(hello3('Alice', '社長'));
+        console.log(hello3('Robert'));
+
+        console.log('--------list 8-7--------');
+
+        const sayHello = function() {
+            console.log('こんにちは');
+        }
+
+        sayHello();
+
+        console.log('--------list 8-9--------');
+
+        function sample() {
+            const x = 10;
+            console.log(x);
+        }
+
+        sample();
+        console.log();
+
+        console.log('--------list 9-1--------');
+
+    </script>
+</body>
+</html>

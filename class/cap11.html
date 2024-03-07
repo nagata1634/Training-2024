@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('--------list 11-1-------');
+
+        // window.alert('アラートです');
+        const result = (1);// confirm('delete OK?');
+        if (result) {
+            document.write('削除しました');
+        } else {
+            document.write('キャンセルしました')
+        }
+        console.log('--------list 11-2-------');
+
+        function delayTask () {
+            document.write('一秒後に実行する')
+        }
+
+        setTimeout(delayTask, 5000);
+
+
+        open('https://google.com', 'window name', 'width=400,height=250');
+
+        window.alert('注意');
+
+
+    </script>
+</body>
+</html>

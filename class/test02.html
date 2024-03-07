@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            margin: 0;
+            text-align: center;
+            white-space: nowrap;
+        }
+        div {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        Qstr = prompt('三角形の大きさを正の整数で指定してください。') // プロンプトで入力を求める
+        Qint = parseInt(Qstr); //入力をintに変換
+            triangle = '▲' // ▲を変数に入力
+            InvertedTriangle = '▼'
+            circle = '●'
+
+        for (let i = 1; i <= Qint; i++) { // Qint回繰り返す
+            document.write('<p>')
+            for (let j = 1; j <= i; j++) { //三角形をi回入力する
+                if (j == 1) { // 繰り返しが1の時
+                    document.write(triangle);
+                } else if (j == i) { // 繰り返しが最後の時
+                    document.write(triangle);
+                } else if (i%5 == 0) {
+                    document.write(circle);
+                } else { // それ以外の時
+                    document.write(InvertedTriangle);
+                }
+            }
+            document.write('</p>') // 改行する
+        }
+    </script>
+</body>
+</html>

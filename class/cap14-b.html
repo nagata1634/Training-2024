@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button">
+        <span>span</span>
+        button
+    </button>
+
+    <a href="http://localhost/js/test03.html">作成中</a>
+    <script>
+        const button = document.querySelector('button');
+        button.addEventListener('click', function (event) {
+            const button = event.currentTarget;
+            button.textContent = '変更します'
+            console.log(button);
+            const button1 = event.target;
+            console.log(button1);
+        })
+
+        function confirmLink(event) {
+            if (confirm('ページ遷移しますか')) {
+                console.log('実行しました');
+            } else {
+                event.preventDefault();
+                console.log('キャンセルしました')
+            }
+        }
+
+        const link = document.querySelector('a');
+        link.addEventListener('click', confirmLink);
+    </script>
+</body>
+</html>

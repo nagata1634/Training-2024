@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cap05</title>
+</head>
+<body>
+    <script>
+            // increment 
+        let xi = 0;
+        xi = xi + 1;
+        xi += 1;
+        xi ++;
+        console.log(xi);
+            // list
+        const interests = ['reading', 'cooking', 'outdooa'];
+        console.log(interests);
+            // list index
+        console.log(interests[0]);
+        console.log(interests[5])
+            //  change read to working
+        interests[0] = 'working';
+        console.log(interests);
+        interests[3] = 'reading';
+        console.log(interests);
+
+        const foods =['寿司', 'カレー', 'ラーメン'];
+        console.log(foods[1]);
+            // look up element qantity 
+        console.log(interests.length);
+        let ListName = `リストの要素数は${interests.length}です`
+        console.log(ListName);
+            // リストに飛ばして入力
+        interests[5] = 'running'
+            // readingの次が'なし'と表示される
+        console.log(interests);
+            // 要素の数はなしを含めて6と表示される
+        console.log(interests.length);
+            // 最後尾にdrivingを追加する
+        interests.push('driving');
+        console.log(interests);
+            // 最後尾から要素を取り出す。drivingが取り出され、配列から削除される。
+        console.log(interests.pop());
+        console.log(interests);
+            // 要素に特定のものが含まれているかを確かめる
+        const fruits = ['みかん','リンゴ', 'バナナ'];
+
+        const check1 = fruits.includes('リンゴ');
+        const check2 = fruits.includes('バナナ');
+        const check3 = fruits.includes(undefined);
+        console.log(`リンゴは${check1}で、バナナは${check2}で、undefinedは${check3}です`);
+
+        // 要素同士を結合する
+        const string = '読書&料理&キャンプ'
+        const a = string.split('&');
+        console.log(a);
+        console.log(string);
+    </script>
+</body>
+</html>

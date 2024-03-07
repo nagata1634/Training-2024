@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="result"></div>
+<!--     <script>
+        fetch('http://localhost/15/sample.json').then(function (result) {
+            return result.json();
+        }).then(function (json) {
+            const result = document.querySelector('.result');
+            result.textContent = json.text;
+        });
+    </script> -->
+    <script>
+        async function showJsonText() {
+            const response = await fetch('http://localhost/15/sample.json');
+            const json = await response.json();
+            const resultBox = document.querySelector('.result');
+            resultBox.textContent = json.text;
+        }
+        showJsonText();
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     <div id="samplea">オリジナルのテキストです</div>
+    <script>
+        const tag = window.document.querySelector('#samplea');
+        tag.textContent = 'テキストを書き換えます';
+    </script>
+
+    <div class="sample">class 属性が sample 1個目</div>
+    <div class="sample">class 属性が sample 2個目</div>
+    <div class="sample">class 属性が sample 3個目</div>
+
+    <script>
+        const element = document.querySelector('.sample');
+        console.log(element);
+        const listElements = document.querySelectorAll('.sample');
+        console.log(listElements);
+        for (const element of listElements) {
+            console.log(element);
+        }
+        console.log(listElements[2]);
+    </script>
+
+    <div id="test">テスト</div>
+    <div class="test">テスト</div>
+    <ul>
+        <li class="item">アイテム1</li>
+        <li class="item">アイテム1</li>
+        <li class="item">アイテム1</li>
+    </ul>
+
+    <script>
+        const idElement = document.querySelector('#test');
+        console.log(idElement);
+
+        const classElement = document.querySelector('.test');
+        console.log(classElement);
+
+        const classElementAll = document.querySelectorAll('.item');
+        for (const element of classElementAll) {
+            console.log(element);
+        }
+    </script>
+
+    <img src="js_sample/13/hero-a.jpg" alt="">
+
+    <script>
+        const img = document.querySelector('img');
+        img.width = 50;
+        img.height = 500;
+    </script>
+
+    <div class="profile" data-id="100" data-user-name="zaru">zaru</div>
+    <input type="hidden" value="keys">
+    <script>
+        const profile = document.querySelector('.profile');
+        console.log(profile.dataset.id);
+        console.log(profile.dataset.userName);
+        console.log(document.querySelector('.profile').dataset.id);
+    </script>
+
+    <p class="score" data-score="100">100点です</p>
+
+    <script>
+        const scoreElement = document.querySelector('.score');
+        const score = scoreElement.dataset.score; //htmlのdata-scoreの値をscoreに代入
+        if (score >= 80) {
+            scoreElement.style.color = 'blue';
+        }
+    </script>
+
+    <a href="https://gogole.com" class="link" data-link="a">すらすら</a>
+
+    <script>
+        const linkElement = document.querySelector('a');
+        const link = linkElement.href = "https://google.com";
+    </script>
+
+    <h1>はじめまして？</h1>
+
+    <script>
+        const hrefElement = document.querySelector('h1');
+        const hre = hrefElement.style.fontSize = '36px'
+        const color = ['#ff0000', '#00ff00', '#0000ff'];
+        j = 100
+        while (j < 100) {
+            i = 0
+            while (i <= 2) {
+                hrefElement.style.color = `color[i]`
+            }
+            i = 0;
+        }
+    </script>
+
+    <style>
+        .normal {
+            font-size: 16px;
+            color: black;
+            background-color: white;
+        }
+        .warning {
+            font-size: 36px;
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+
+    <p class="1 normal">テキスト</p>
+
+    <script>
+        document.querySelector('p').classList.remove('normal');
+        document.querySelector('p').classList.add('warning');
+    </script>
+ -->
+    <style>
+        p .test {
+            letter-spacing: 1px;
+        }
+    </style>
+    <p id='test' class="test">このテキストの文字幅を変更してください</p>
+
+    <script>
+        const testP = document.querySelector('#test');
+        testP.style.letterSpacing = '30px';
+
+    </script>
+
+    <style>
+        p.javascript {
+            color: blue;
+        }
+    </style>
+    <p id="js" class="java">すらすら</p>
+
+    <script>
+        const jsP = document.querySelector('#js');
+        jsP.classList.replace('java', 'javascript');
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+        div  {
+            background-color: blue;
+            width: 85px;
+            height: 85px;
+            
+        }
+        div .child {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        div .parent {
+            background-color: rgb(34,34,255);
+            width: 500px;
+            height: 85px;
+
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <p>難易度を選択してください</p>
+    <input type="range" name="難易度" id="Lv" min="1" max="9">
+    <p>Lv.<span class="Lv">2</span></p>
+
+    <div class="display">
+
+    </div>
+    <script>
+        // 難易度選択
+        const acquisition = document.querySelector('input');
+        acquisition.addEventListener('input', (event) => {
+            const chenge = document.querySelector('.Lv');
+            chenge.textContent = event.target.value;
+        });
+
+        /*難易度のメモ書き
+            Lv.1  : マス目を3*3
+            Lv.2  : マス目を4*4
+            Lv.3  : マス目を5*5
+            Lv.4  : マス目を6*6
+            Lv.5  : マス目を7*7
+            Lv.6  : マス目を8*8
+            Lv.7  : マス目を9*9
+            Lv.8  : マス目を10*10
+            Lv.9  : rgb のうち1つを固定
+            Lv.10 : rgb のうち2つを固定
+        */
+        // color code の格納
+        const color = [];
+        let howColor;
+        function difficulty(num) {
+            switch (num) {
+                case 1:
+                    howColor = 3;
+                    generatorBox(howColor); // マス目を生成
+                    rdmInt(howColor**2);
+                    break;
+                case 2:
+                    howColor = 4;
+                    generatorBox(howColor);
+                    break;
+                case 3:
+                    howColor = 5;
+                    generatorBox(howColor);
+                    break;
+                case 4:
+                    howColor = 6;
+                    generatorBox(howColor);
+                    break;
+                case 5:
+                    howColor = 7;
+                    generatorBox(howColor);
+                    break;
+                case 6:
+                    howColor = 8;
+                    generatorBox(howColor);
+                    break;
+                case 7:
+                    howColor = 9;
+                    generatorBox(howColor);
+                    break;
+                case 8:
+                    howColor = 10;
+                    generatorBox(howColor);
+                    break;
+                case 9:
+                    howColor = 10;
+                    generatorBox(howColor);
+                    break;
+                case 10:
+                    howColor = 10;
+                    generatorBox(howColor);
+                    break;
+            }
+        }
+        // rdm generator
+        function rdmInt(num) {
+            for (let i = 0; i <= num - 1; i++) {
+                const random = Math.floor(Math.random() * (255) + 1);
+                color.push(random);
+            }
+        };
+
+        function generatorBox(num) {
+            // numの数だけdiv要素をbodyの下に生成する。
+            for (let i = 0; i <= num; i++) {
+                const box = document.createElement('div');
+                const content = document.querySelector('.display');
+                content.before(box); // div 要素を作成
+
+                const a = content.lastElementChild;
+                a.classList.add(i);
+                console.log(a);
+            };
+        };
+
+        console.log(querySelector('div'));
+        console.log(querySelectorAll('div'));
+
+        generatorBox(5);
+        
+        function addClass(tag, className) {
+            // 全ての tag に className のclass を追加する
+            const elements = document.querySelectorAll(tag);
+            for (element of elements) {
+                element.addClass(className);
+            };
+        };
+
+        function firstClass(tag, removeClass, addClass) {
+            // tag の最初のタグからclassネームを削除
+            const element = document.querySelector(tag);
+            element.classList.remove(removeClass);
+            element.classList.add(addClass);
+        }
+
+        function a() {
+            howColor = 3;
+            generatorBox(howColor); // マス目を生成
+            rdmInt(howColor**2); // ランダムに数列を作成
+        }
+    </script>
+</body>
+</html>

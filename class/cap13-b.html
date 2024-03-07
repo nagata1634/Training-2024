@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <p class="first">最初からある要素です</p>
+    </div>
+    <script>
+        function display(tag) {
+            const element = document.querySelectorAll(tag);
+            for (let i = 0; i == element; i++) {
+                console.log(i);                
+            }
+        }
+
+        function addText(htmlTag, word, htmlClass, number) {
+            /* htmlのタグを指定して、ワードを入力、htmlのクラスを指定して数字で要素を任意の位置に追加します。
+            1.append htmlClassの要素の末尾に追加
+            2.prepend htmlClassの要素の先頭に追加
+            3.before htmlClassの要素の前に要素を追加
+            4.after htmlClassの要素の後に要素を追加 */
+            const newText = document.createElement(htmlTag);
+            newText.textContent = `${word}`;
+
+            const select = document.querySelector(htmlClass);
+
+            switch (number) {
+                case 1:
+                    select.append(newText);
+                    break;
+                case 2:
+                    select.prepend(newText);
+                    break;
+                case 3:
+                    select.before(newText);
+                    break;
+                case 4:
+                    select.after(newText);
+                    break;
+            }
+                    
+        }
+        const JokePoi = function() {
+            for (let i = 0; i <= 100; i++) {
+                if (i%2 == 0) {
+                   console.log('2の倍数か2の付く数字');
+                } else if (i%3 == 0) {
+                   console.log('3の倍数か3の付く数字');
+                } else {
+                   console.log(i);
+                }
+            }
+        }
+
+        let word = '末尾に追加します';
+        addText('p', word, '.content', 1);
+
+        word = '先頭に追加します';
+        addText('p', word, '.content', 2);
+
+        word = 'first要素の前に追加';
+        addText('p', word, '.first', 3);
+
+        word = 'first要素の後に追加';
+        addText('p', word, '.first', 4);
+
+        JokePoi(); // consoleに結果を表示
+    </script>
+</body>
+</html>
