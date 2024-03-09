@@ -72,3 +72,9 @@ document.addEventListener('mousedown', (event) => {
     console.log('mousedown');
     slideShow();
 });
+setInterval(slideShow, 5000);
+
+// テキスト　ループ
+const text = document.querySelector("p" + ".a");
+    texta = ' Text'
+    text.textContent =  texta.repeat(70);
