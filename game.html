@@ -4,47 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>カラースタイル</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./info/style.css">
+    <link rel="stylesheet" href="./info/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let jsPaths = ["./info/anime.min.js", "./info/script.js", "./info/gamescript.js"];
+            for (jsPath of jsPaths) {
+                const create = document.createElement('script');
+                create.src = jsPath;
+                document.head.appendChild(create);
+            }
+        });
+        console.log('ファイルリストの読み込みが完了しました')
+    </script>
 </head>
 <body>
-    <header>
-        <h1>色彩感覚</h1>
-    </header>
-    <aside>
-        <h1>仮コンテンツ</h1>
-        <p>参考リンク集</p>
-        <nav>
-            
-        </nav>
-    </aside>
+    <!-- ページ読み込み画面 -->
+    <div class="load">
+        <h1 class="load loading">Loading...</h2>
+    </div>
+    <!-- メインコンテンツ -->
+    <div class="main hide">
+        <header>
+            <!-- サイドバー -->
+            <!-- トッププルダウンメニュー -->
+            <div class="logo">
+                <img src="" alt="">
+            </div>
+        </header>
+        <main>
+            <aside class="sideTab">
+                <ul>
+                    <li>
+                        <a href="">
+                            <span></span>
+                            <span><img src="" alt=""></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./index.html">
+                            <span class="material-symbols-outlined">home</span>
+                            <span class="title">ホームに戻る</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./game.html">
+                            <span class="material-symbols-outlined">undo</span>
+                            <span class="title">ゲーム</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./reference.html">
+                            <span class="material-symbols-outlined">design_services</span>
+                            <span class="title">参考にしたWebサイト</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#botton">
+                            <span class="material-symbols-outlined">keyboard_double_arrow_down</span>
+                            <span class="title">下に行く</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <div class="gamePreview"></div>
     <main>
-        <div class="change">
-            <table class="table">
-                <tr>
-                    <th>Lv1</th>
-                    <td>rgb全てが変更されます</td>
-                </tr>
-                <tr>
-                    <th>Lv2</th>
-                    <td>rgbのうち2つが変更されます</td>
-                </tr>
-                <tr>
-                    <th>Lv3</th>
-                    <td>rgbのうち3つが変更されます</td>
-                </tr>
-            </table>
-
-            <input class="config" type="range" name="難易度" min="1" max="3"><p>Lv.<span class="lv">1</span></p>
-            <button class="start">ゲームを開始する</button>
-        </div>
-        <!-- hide要素ここまで -->
-        <div id="games" class="change hide">
-
-        </div>
-    </main>
+        <table>
+            <!-- 液晶画面部分 -->
+            <tr>
+              <td colspan="4">
+                <input type="text" class="display" name="display" value="" disabled>
+              </td>
+            </tr>
+       
+            <!-- 上から1段目（7~9＋÷） -->
+            <tr>
+              <td><input type="button" value="7" onclick="get_calc(this)"></td>
+              <td><input type="button" value="8" onclick="get_calc(this)"></td>
+              <td><input type="button" value="9" onclick="get_calc(this)"></td>
+              <td><input type="button" value="÷" class="operator" name="div_btn" onclick="get_calc(this)"></td>
+            </tr>
+              
+            <!-- 上から2段目（4~6＋×） -->
+            <tr>
+              <td><input type="button" value="4" onclick="get_calc(this)"></td>
+              <td><input type="button" value="5" onclick="get_calc(this)"></td>
+              <td><input type="button" value="6" onclick="get_calc(this)"></td>
+              <td><input type="button" value="×" class="operator" name="multi_btn" onclick="get_calc(this)"></td>
+            </tr>
+       
+            <!-- 上から3段目（1~3＋-） -->
+            <tr>
+              <td><input type="button" value="1" onclick="get_calc(this)"></td>
+              <td><input type="button" value="2" onclick="get_calc(this)"></td>
+              <td><input type="button" value="3" onclick="get_calc(this)"></td>
+              <td><input type="button" value="-" class="operator" onclick="get_calc(this)"></td>
+            </tr>
+       
+            <!-- 上から4段目（0/C/=/+) -->
+            <tr>
+              <td><input type="button" value="0" onclick="get_calc(this)"></td>
+              <td><input type="button" value="C" onclick="get_calc(this)"></td>
+              <td><input type="button" value="=" class="equal" onclick="get_calc(this)"></td>
+              <td><input type="button" value="+" class="operator" onclick="get_calc(this)"></td>
+            </tr>
+       
+          </table>
+   </main>
     <footer>
 
     </footer>
 </body>
-    <script src="js/gamescript.js"></script>
 </html>

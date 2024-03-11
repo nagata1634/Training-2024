@@ -16,16 +16,16 @@
 }
 
 /* ローディング画面 */
-div .load{
+div .load {
     overflow: hidden;
+    position: relative;
 }
 
-h2 .load {
-    position: relative;
+h2 .load .load1{
     color: #000;
     font-size: 500px;
     text-align: center;
-    z-index: 2;
+    transform: translate(0, -50%);
 }
 
 .blocks + .load {

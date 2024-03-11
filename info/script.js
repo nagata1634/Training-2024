@@ -2,12 +2,13 @@
 
 // after class .load create div tag & class block 
 const container = document.querySelector('.load');
-
+if ( container != null) {
 for (let i = 0; i <= 50; i++) {
     const blocks = document.createElement('div');
     blocks.classList.add("blocks", "load");
     container.append(blocks);
 };
+}
 // .blocks要素にアニメーションをつける
 function animeteBlocks() {
     anime({
@@ -76,5 +77,7 @@ setInterval(slideShow, 5000);
 
 // テキスト　ループ
 const text = document.querySelector("p" + ".a");
+if (text != null) {
     texta = ' Text'
     text.textContent =  texta.repeat(70);
+}
